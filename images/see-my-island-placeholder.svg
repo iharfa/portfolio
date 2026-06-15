@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720" role="img" aria-label="See My Island — preview coming soon">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0b2030"/>
+      <stop offset="1" stop-color="#06303a"/>
+    </linearGradient>
+    <radialGradient id="lagoon" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#2a9d8f"/>
+      <stop offset="0.6" stop-color="#1d6f7a"/>
+      <stop offset="1" stop-color="#0b3d4a"/>
+    </radialGradient>
+  </defs>
+  <rect width="1280" height="720" fill="url(#sky)"/>
+  <g opacity="0.9">
+    <ellipse cx="640" cy="360" rx="360" ry="220" fill="url(#lagoon)"/>
+    <path d="M420 360 Q560 250 720 300 Q860 345 800 430 Q700 500 540 470 Q420 440 420 360 Z" fill="#e9dcb5" opacity="0.85"/>
+    <path d="M470 360 Q580 290 700 325 Q790 355 750 415 Q670 460 560 440 Q480 420 470 360 Z" fill="#2D6A4F" opacity="0.8"/>
+  </g>
+  <g stroke="#3a6d7d" stroke-width="1" opacity="0.35">
+    <line x1="0" y1="180" x2="1280" y2="180"/>
+    <line x1="0" y1="360" x2="1280" y2="360"/>
+    <line x1="0" y1="540" x2="1280" y2="540"/>
+    <line x1="320" y1="0" x2="320" y2="720"/>
+    <line x1="640" y1="0" x2="640" y2="720"/>
+    <line x1="960" y1="0" x2="960" y2="720"/>
+  </g>
+  <text x="640" y="624" text-anchor="middle" font-family="Hanken Grotesk, sans-serif" font-size="22" letter-spacing="6" fill="#95d4b3">SENTINEL · LANDSAT EXPLORER</text>
+  <text x="640" y="666" text-anchor="middle" font-family="Hanken Grotesk, sans-serif" font-size="15" letter-spacing="3" fill="#6f97a3">COASTAL CHANGE OVER TIME · IN DEVELOPMENT</text>
+</svg>

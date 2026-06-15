@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>iHarfa | Civic Tech Studio Maldives</title>
+<meta name="description" content="iHarfa builds civic tech, open data, and public-interest tools for the Maldives — dashboards, maps, trackers, and transparency tools."/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&amp;family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "error": "#ba1a1a",
+                    "surface-container-high": "#eae8e3",
+                    "primary": "#000000",
+                    "on-tertiary": "#ffffff",
+                    "border-gray": "#D1CEC7",
+                    "on-error-container": "#93000a",
+                    "on-secondary": "#ffffff",
+                    "on-surface-variant": "#444748",
+                    "on-secondary-container": "#63635f",
+                    "secondary-fixed-dim": "#c8c6c2",
+                    "surface-container": "#f0eee9",
+                    "on-primary-fixed": "#1c1b1b",
+                    "on-primary-container": "#858383",
+                    "on-tertiary-fixed": "#002114",
+                    "outline-variant": "#c4c7c7",
+                    "surface-container-lowest": "#ffffff",
+                    "on-surface": "#1b1c19",
+                    "on-primary-fixed-variant": "#474746",
+                    "tertiary": "#000000",
+                    "inverse-surface": "#30312e",
+                    "surface-container-low": "#f5f3ee",
+                    "surface": "#fbf9f4",
+                    "outline": "#747878",
+                    "signal-red": "#E76F51",
+                    "secondary": "#5e5e5b",
+                    "tertiary-fixed-dim": "#95d4b3",
+                    "surface-container-highest": "#e4e2dd",
+                    "inverse-primary": "#c8c6c5",
+                    "primary-container": "#1c1b1b",
+                    "background": "#fbf9f4",
+                    "on-error": "#ffffff",
+                    "tertiary-container": "#002114",
+                    "on-secondary-fixed": "#1b1c19",
+                    "inverse-on-surface": "#f2f1ec",
+                    "surface-dim": "#dbdad5",
+                    "soft-yellow": "#E9C46A",
+                    "on-secondary-fixed-variant": "#474744",
+                    "secondary-container": "#e1dfdb",
+                    "surface-variant": "#e4e2dd",
+                    "surface-tint": "#5f5e5e",
+                    "error-container": "#ffdad6",
+                    "on-background": "#1b1c19",
+                    "on-tertiary-container": "#539072",
+                    "primary-fixed": "#e5e2e1",
+                    "on-primary": "#ffffff",
+                    "surface-bright": "#fbf9f4",
+                    "on-tertiary-fixed-variant": "#0e5138",
+                    "tertiary-fixed": "#b1f0ce",
+                    "secondary-fixed": "#e4e2dd",
+                    "primary-fixed-dim": "#c8c6c5",
+                    "muted-blue": "#457B9D",
+                    "civic-teal": "#2D6A4F"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0px",
+                    "lg": "0px",
+                    "xl": "0px",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "margin-desktop": "64px",
+                    "stack-lg": "32px",
+                    "margin-mobile": "20px",
+                    "stack-md": "16px",
+                    "section-gap": "120px",
+                    "container-max": "1280px",
+                    "gutter": "24px",
+                    "stack-sm": "8px"
+            },
+            "fontFamily": {
+                    "button-text": ["Hanken Grotesk"],
+                    "body-lg": ["Hanken Grotesk"],
+                    "headline-lg-mobile": ["Playfair Display"],
+                    "body-md": ["Hanken Grotesk"],
+                    "display-xl": ["Playfair Display"],
+                    "headline-md": ["Playfair Display"],
+                    "display-xl-mobile": ["Playfair Display"],
+                    "headline-lg": ["Playfair Display"],
+                    "label-caps": ["Hanken Grotesk"]
+            },
+            "fontSize": {
+                    "button-text": ["14px", {"lineHeight": "1", "letterSpacing": "0.02em", "fontWeight": "600"}],
+                    "body-lg": ["20px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "headline-lg-mobile": ["32px", {"lineHeight": "1.2", "fontWeight": "500"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "display-xl": ["72px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                    "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "500"}],
+                    "display-xl-mobile": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                    "headline-lg": ["48px", {"lineHeight": "1.2", "fontWeight": "500"}],
+                    "label-caps": ["12px", {"lineHeight": "1.5", "letterSpacing": "0.1em", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #fbf9f4;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .project-card:hover img {
+            transform: scale(1.02);
+        }
+        .cta-arrow {
+            transition: transform 0.3s ease;
+        }
+        .cta-hover:hover .cta-arrow {
+            transform: translateX(4px);
+        }
+    </style>
+</head>
+<body class="font-body-md text-on-surface">
+<!-- Header (TopNavBar) -->
+<header class="bg-background sticky top-0 z-50 border-b border-border-gray">
+<nav class="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-stack-md max-w-container-max mx-auto">
+<a href="#top" class="text-body-lg font-hankenGrotesk font-bold tracking-tighter text-primary">iHarfa</a>
+<div class="hidden md:flex items-center gap-stack-lg">
+<a class="text-primary font-bold border-b-2 border-primary pb-1 font-hankenGrotesk text-body-md" href="#work">Work</a>
+<a class="text-secondary hover:text-primary transition-colors font-hankenGrotesk text-body-md" href="#about">About</a>
+<a class="text-secondary hover:text-primary transition-colors font-hankenGrotesk text-body-md" href="#work">Themes</a>
+</div>
+</nav>
+</header>
+<main id="top">
+<!-- Hero Section -->
+<section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop pt-section-gap pb-stack-lg">
+<div class="grid grid-cols-12 gap-gutter">
+<div class="col-span-12 md:col-span-9">
+<h1 class="font-display-xl text-display-xl-mobile md:text-display-xl text-primary mb-stack-md">
+                        Civic tech, open data, and public-interest tools for the Maldives.
+                    </h1>
+<p class="font-body-lg text-body-lg text-secondary max-w-2xl mb-stack-lg">
+                        A portfolio of dashboards, maps, trackers, and transparency tools built to make public information easier to access, understand, and use.
+                    </p>
+<div class="flex flex-col sm:flex-row items-start sm:items-center gap-stack-lg">
+<a class="inline-flex items-center justify-center border-2 border-primary px-stack-lg py-3 font-button-text text-button-text uppercase cta-hover" href="#work">
+                            View projects
+                            <span class="material-symbols-outlined ml-2 cta-arrow" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 1: Civic Tech and Open Data -->
+<section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-section-gap" id="work">
+<div class="border-b border-primary mb-stack-lg">
+<h2 class="font-label-caps text-label-caps text-primary uppercase pb-2">Section 01 — Civic Tech &amp; Open Data Tools</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<!-- Project 1: Majlis Now -->
+<div class="group transition-all duration-700 opacity-100">
+<a class="block border border-border-gray bg-surface-container-low project-card h-full" href="https://majlis-now.vercel.app/" target="_blank" rel="noopener">
+<div class="aspect-video w-full overflow-hidden border-b border-border-gray">
+<img alt="Majlis Now dashboard preview" loading="lazy" class="w-full h-full object-cover object-top transition-transform duration-700" src="images/majlis-now.png"/>
+</div>
+<div class="p-stack-md">
+<div class="flex items-center gap-stack-sm mb-2">
+<span class="font-label-caps text-[10px] uppercase bg-soft-yellow text-primary px-2 py-0.5">Proof of Concept</span>
+<span class="font-label-caps text-[10px] uppercase text-secondary">Parliament, Civic Education</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary mb-2">Majlis Now</h3>
+<p class="font-body-md text-secondary mb-4">A proof of concept for how Parliament could be monitored from a civic-education perspective — making parliamentary information more accessible and easy to comprehend for the general public, especially first-time voters.</p>
+</div>
+</a>
+</div>
+<!-- Project 2: Maldives Island Data Explorer -->
+<div class="group transition-all duration-700 opacity-100">
+<a class="block border border-border-gray bg-surface-container-low project-card h-full" href="https://mv-islands.vercel.app/" target="_blank" rel="noopener">
+<div class="aspect-video w-full overflow-hidden border-b border-border-gray">
+<img alt="Maldives Island Data Explorer preview" loading="lazy" class="w-full h-full object-cover object-top transition-transform duration-700" src="images/mv-islands.png"/>
+</div>
+<div class="p-stack-md">
+<div class="flex items-center gap-stack-sm mb-2">
+<span class="font-label-caps text-[10px] uppercase bg-civic-teal text-white px-2 py-0.5">Live</span>
+<span class="font-label-caps text-[10px] uppercase text-secondary">Open Data, Digital Archive</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary mb-2">Maldives Island Data Explorer</h3>
+<p class="font-body-md text-secondary mb-4">A consolidation of public datasets — OneMap, StatMap, the 2022 Census and the older Atolls of Maldives dataset — into a single digital archive and consolidated point of access to island information.</p>
+</div>
+</a>
+</div>
+</div>
+</section>
+<!-- Section 2: Public Participation & Environmental Intelligence -->
+<section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-section-gap">
+<div class="border-b border-primary mb-stack-lg">
+<h2 class="font-label-caps text-label-caps text-primary uppercase pb-2">Section 02 — Public Participation &amp; Environmental Intelligence</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<!-- Project 3: HDC Public Participation Platform -->
+<div class="group transition-all duration-700 opacity-100">
+<a class="block border border-border-gray bg-surface-container-low project-card h-full" href="https://hdc-ppp.vercel.app/" target="_blank" rel="noopener">
+<div class="aspect-video w-full overflow-hidden border-b border-border-gray">
+<img alt="HDC Public Participation Platform preview" loading="lazy" class="w-full h-full object-cover object-top transition-transform duration-700" src="images/hdc-ppp.png"/>
+</div>
+<div class="p-stack-md">
+<div class="flex items-center gap-stack-sm mb-2">
+<span class="font-label-caps text-[10px] uppercase bg-civic-teal text-white px-2 py-0.5">Live</span>
+<span class="font-label-caps text-[10px] uppercase text-secondary">Public Participation, Consultation</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary mb-2">Public Participation Platform</h3>
+<p class="font-body-md text-secondary mb-4">Overhauling the public participation and consultation process to be data-informed and open — building public trust and engagement in major and minor development projects with direct and indirect impacts on the public.</p>
+</div>
+</a>
+</div>
+<!-- Project 4: Hulhumalé Environmental Dashboard -->
+<div class="group transition-all duration-700 opacity-100">
+<a class="block border border-border-gray bg-surface-container-low project-card h-full" href="https://hml-env-db-v2.vercel.app/" target="_blank" rel="noopener">
+<div class="aspect-video w-full overflow-hidden border-b border-border-gray">
+<img alt="Hulhumalé Environmental Dashboard preview" loading="lazy" class="w-full h-full object-cover object-top transition-transform duration-700" src="images/hml-env-db.png"/>
+</div>
+<div class="p-stack-md">
+<div class="flex items-center gap-stack-sm mb-2">
+<span class="font-label-caps text-[10px] uppercase bg-civic-teal text-white px-2 py-0.5">Live</span>
+<span class="font-label-caps text-[10px] uppercase text-secondary">Environmental Data, Hulhumalé</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary mb-2">Hulhumalé Environmental Dashboard</h3>
+<p class="font-body-md text-secondary mb-4">Consolidating environmental datasets into a single dashboard for Hulhumalé. The idea: a sensor network can deliver very specific, Hulhumalé-based environmental data and information for public use.</p>
+</div>
+</a>
+</div>
+<!-- Project 5: Rannamaari Tracker (WIP) -->
+<div class="group transition-all duration-700 opacity-100">
+<div class="border border-border-gray bg-surface-container-low h-full flex flex-col opacity-90 grayscale hover:grayscale-0 transition-all duration-500 project-card">
+<div class="aspect-video w-full overflow-hidden border-b border-border-gray relative">
+<img alt="Rannamaari Tracker preview" loading="lazy" class="w-full h-full object-cover" src="images/rannamaari-placeholder.svg"/>
+<div class="absolute inset-0 bg-primary/10 flex items-center justify-center">
+<span class="font-label-caps text-label-caps bg-primary text-white px-4 py-2">Preview coming soon</span>
+</div>
+</div>
+<div class="p-stack-md">
+<div class="flex items-center gap-stack-sm mb-2">
+<span class="font-label-caps text-[10px] uppercase bg-secondary text-white px-2 py-0.5">Work in progress</span>
+<span class="font-label-caps text-[10px] uppercase text-secondary">OSINT, Vessels, EEZ</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary mb-2">Rannamaari Tracker</h3>
+<p class="font-body-md text-secondary">Tracking dredgers operating within the Maldives EEZ. A work in progress aimed at opening this activity up for public access and scrutiny.</p>
+</div>
+</div>
+</div>
+<!-- Project 6: See My Island (WIP) -->
+<div class="group transition-all duration-700 opacity-100">
+<div class="border border-border-gray bg-surface-container-low h-full flex flex-col opacity-90 grayscale hover:grayscale-0 transition-all duration-500 project-card">
+<div class="aspect-video w-full overflow-hidden border-b border-border-gray relative">
+<img alt="See My Island satellite browser preview" loading="lazy" class="w-full h-full object-cover" src="images/see-my-island-placeholder.svg"/>
+<div class="absolute inset-0 bg-primary/10 flex items-center justify-center">
+<span class="font-label-caps text-label-caps bg-primary text-white px-4 py-2">Preview coming soon</span>
+</div>
+</div>
+<div class="p-stack-md">
+<div class="flex items-center gap-stack-sm mb-2">
+<span class="font-label-caps text-[10px] uppercase bg-secondary text-white px-2 py-0.5">Work in progress</span>
+<span class="font-label-caps text-[10px] uppercase text-secondary">Satellite Data, Research</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary mb-2">See My Island</h3>
+<p class="font-body-md text-secondary">Demystifying satellite imagery so local island councils, journalists and researchers can easily browse Sentinel-1, Sentinel-2 and Landsat datasets. A work in progress.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 3: RTI & Open Public Information -->
+<section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-section-gap">
+<div class="border-b border-primary mb-stack-lg">
+<h2 class="font-label-caps text-label-caps text-primary uppercase pb-2">Section 03 — Dashboards from RTI Responses &amp; Open Public Information</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<!-- Project 7: SOE Employment Dashboard -->
+<div class="group transition-all duration-700 opacity-100">
+<a class="block border border-border-gray bg-surface-container-low project-card h-full" href="https://soe-employment-v2.vercel.app/" target="_blank" rel="noopener">
+<div class="aspect-video w-full overflow-hidden border-b border-border-gray">
+<img alt="SOE Employment Dashboard preview" loading="lazy" class="w-full h-full object-cover object-top transition-transform duration-700" src="images/soe-employment.png"/>
+</div>
+<div class="p-stack-md">
+<div class="flex items-center gap-stack-sm mb-2">
+<span class="font-label-caps text-[10px] uppercase bg-civic-teal text-white px-2 py-0.5">Live</span>
+<span class="font-label-caps text-[10px] uppercase text-secondary">RTI, SOEs, Public Finance</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary mb-2">SOE Employment Dashboard</h3>
+<p class="font-body-md text-secondary mb-4">Employment data across state-owned enterprises over time — showing hiring and firing trends across major political changes, along with their wider economic implications.</p>
+</div>
+</a>
+</div>
+<!-- Project 8: What Da Moody -->
+<div class="group transition-all duration-700 opacity-100">
+<a class="block border border-border-gray bg-surface-container-low project-card h-full" href="https://what-da-moody.vercel.app/" target="_blank" rel="noopener">
+<div class="aspect-video w-full overflow-hidden border-b border-border-gray">
+<img alt="What Da Moody credit rating tracker preview" loading="lazy" class="w-full h-full object-cover object-top transition-transform duration-700" src="images/what-da-moody.png"/>
+</div>
+<div class="p-stack-md">
+<div class="flex items-center gap-stack-sm mb-2">
+<span class="font-label-caps text-[10px] uppercase bg-civic-teal text-white px-2 py-0.5">Live</span>
+<span class="font-label-caps text-[10px] uppercase text-secondary">Credit Rating, Explainer</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary mb-2">What Da Moody</h3>
+<p class="font-body-md text-secondary mb-4">Exploring the Moody's and Fitch ratings for the Maldives, giving the full picture of what has happened to our credit rating over time — beyond the political noise.</p>
+</div>
+</a>
+</div>
+</div>
+</section>
+<!-- Section 4: Funzies -->
+<section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-section-gap">
+<div class="border-b border-primary mb-stack-lg">
+<h2 class="font-label-caps text-label-caps text-primary uppercase pb-2">Section 04 — Projects for Funzies</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<!-- Project 9: Maldivian Delay Tracker -->
+<div class="group transition-all duration-700 opacity-100">
+<a class="block border border-border-gray bg-surface-container-low project-card h-full" href="https://maldivian-tracker.vercel.app/" target="_blank" rel="noopener">
+<div class="aspect-video w-full overflow-hidden border-b border-border-gray">
+<img alt="Maldivian Delay Tracker preview" loading="lazy" class="w-full h-full object-cover object-top transition-transform duration-700" src="images/maldivian-tracker.png"/>
+</div>
+<div class="p-stack-md">
+<div class="flex items-center gap-stack-sm mb-2">
+<span class="font-label-caps text-[10px] uppercase bg-civic-teal text-white px-2 py-0.5">Live</span>
+<span class="font-label-caps text-[10px] uppercase text-secondary">Transport, Funzies</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary mb-2">Maldivian Delay Tracker</h3>
+<p class="font-body-md text-secondary mb-4">Tracking Maldivian flight data from fis.com.mv to see how often Maldivian flights are delayed each day — hoping to see service delivery improve over time.</p>
+</div>
+</a>
+</div>
+</div>
+</section>
+<!-- About Section -->
+<section class="bg-surface-container-low py-section-gap" id="about">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="grid grid-cols-12 gap-gutter">
+<div class="col-span-12 md:col-span-10 lg:col-span-8">
+<span class="font-label-caps text-label-caps text-secondary uppercase mb-stack-md block">Studio Profile</span>
+<p class="font-display-xl text-headline-lg-mobile md:text-headline-lg text-primary leading-tight">
+                            iHarfa builds public-interest tools focused on open data, civic transparency, environmental intelligence, RTI, public participation, and digital archives in the Maldives.
+                        </p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container border-t border-primary">
+<div class="grid grid-cols-12 gap-gutter px-margin-mobile md:px-margin-desktop py-section-gap max-w-container-max mx-auto">
+<div class="col-span-12 lg:col-span-6 mb-stack-lg lg:mb-0">
+<div class="font-playfairDisplay text-headline-md text-primary mb-stack-md">iHarfa</div>
+<p class="font-hankenGrotesk text-body-md text-secondary max-w-sm">
+                    © 2026 iHarfa. Civic tech for the Maldives. We believe in the power of open data to strengthen democratic participation and accountability.
+                </p>
+</div>
+<div class="col-span-6 lg:col-span-6">
+<h4 class="font-label-caps text-label-caps text-primary uppercase mb-stack-md">Studio</h4>
+<ul class="space-y-2">
+<li><a class="font-hankenGrotesk text-body-md text-secondary hover:text-primary transition-colors" href="#work">Work</a></li>
+<li><a class="font-hankenGrotesk text-body-md text-secondary hover:text-primary transition-colors" href="#about">About</a></li>
+</ul>
+</div>
+</div>
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-stack-md border-t border-border-gray">
+<p class="font-label-caps text-[10px] text-on-secondary-fixed-variant uppercase">
+                Crafted for transparency and public good.
+            </p>
+</div>
+</footer>
+<script>
+        // Smooth-scroll for in-page anchors (skip plain "#" links)
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const id = this.getAttribute('href');
+                if (id === '#') return;
+                const target = document.querySelector(id);
+                if (!target) return;
+                e.preventDefault();
+                target.scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+
+        // Reveal cards on scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100');
+                    entry.target.classList.remove('opacity-0', 'translate-y-4');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.group').forEach(el => {
+            el.classList.add('transition-all', 'duration-700', 'opacity-0', 'translate-y-4');
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
