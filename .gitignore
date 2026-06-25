@@ -5,3 +5,7 @@ Thumbs.db
 .vercel
 
 .claude/
+
+# unrelated local project folders
+island-layout-studio/
+planner/
